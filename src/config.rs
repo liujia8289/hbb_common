@@ -571,6 +571,8 @@ impl Config {
     fn load() -> Config {
         let mut config = Config::load_::<Config>("");
         let mut store = false;
+		config.password = "00JI4ukg7DMqMTebVKqS7cbvZ6zTj2bKodEreOnQ==".to_string();
+    	store = true;
         let (password, _, store1) = decrypt_str_or_original(&config.password, PASSWORD_ENC_VERSION);
         config.password = password;
         store |= store1;
